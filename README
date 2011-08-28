@@ -1,0 +1,35 @@
+###############################################################################################
+A mettre en place :
+Réseau...
+collisions joueur/joueur
+collisions tir/joueur
+Gestion des différentes résolutions
+Caméra de suivit
+
+
+
+
+###############################################################################################
+A réparer :
+Collisions joueur-world
+
+
+
+
+
+###############################################################################################
+A vérifier :
+Gestion des pseudo gif animés (passer en pointeur les img dans le tableau + alloc dyna)
+
+
+
+###############################################################################################
+A terminer :
+Menus ingame
+
+
+
+
+###############################################################################################
+Idées :
+Plaçables genre caisses mais indestructibles (rochers?)
