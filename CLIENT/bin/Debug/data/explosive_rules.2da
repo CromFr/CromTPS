@@ -1,0 +1,17 @@
+# Range1       Range2          Range3
+#                 ×            × x ×
+#   x           x X x        × X X X ×
+# x O x       × X O X ×      x X O X x
+#   x           x X x        × X X X ×
+#                 ×            × x ×
+#          
+#PLACEABLEITEM_EXPLOSIVE_TYPE               PLACEABLEITEM_EXPLOSIVE_RANGE         
+#       PLACEABLEITEM_EXPLOSIVE_PRICE               PLACEABLEITEM_EXPLOSIVE_TIMEOUT                         
+#               PLACEABLEITEM_EXPLOSIVE_NAME                         
+#                                PLACEABLEITEM_EXPLOSIVE_DAMAGE
+#
+0       0       UNDEFINED        0          0       0.0
+1       50      Petard           30         1       1.0
+2       200     Dynamite         80         2       2.0
+3       500     Plastic          120        2       4.0
+11      1000    Bombe-H          200        3       6.0

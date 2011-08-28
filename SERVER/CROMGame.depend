@@ -1,0 +1,520 @@
+# depslib dependency file v1.0
+1310137930 source:/home/crom/CROMGame/Character.cpp
+	<iostream>
+	<cstdlib>
+	<vector>
+	<string>
+	<SFML/Graphics.hpp>
+	"main.h"
+	"Character.h"
+	"VfxHandler.h"
+	"convert.h"
+	"guifunc.h"
+	"utils.h"
+	"world.h"
+
+1310136601 /home/crom/CROMGame/main.h
+
+1310063792 /home/crom/CROMGame/Inventory.h
+
+1310134564 /home/crom/CROMGame/Character.h
+	"Inventory.h"
+
+1310134632 /home/crom/CROMGame/VfxHandler.h
+
+1310121127 /home/crom/CROMGame/guifunc.h
+	"Character.h"
+
+1309820494 /home/crom/CROMGame/utils.h
+
+1310049593 /home/crom/CROMGame/convert.h
+
+1310054224 /home/crom/CROMGame/world.h
+
+1309986595 source:/home/crom/CROMGame/Inventory.cpp
+	<stdlib.h>
+	<stdio.h>
+	<vector>
+	"main.h"
+	"Inventory.h"
+	"Character.h"
+
+1310134691 source:/home/crom/CROMGame/VfxHandler.cpp
+	<stdio.h>
+	<string.h>
+	<time.h>
+	<iostream>
+	<cstdlib>
+	<vector>
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"main.h"
+	"world.h"
+	"convert.h"
+	"VfxHandler.h"
+
+1310049593 source:/home/crom/CROMGame/convert.cpp
+	<SFML/Graphics.hpp>
+	"main.h"
+
+1310138016 source:/home/crom/CROMGame/guifunc.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<time.h>
+	<SFML/Graphics.hpp>
+	"main.h"
+	"convert.h"
+	"guifunc.h"
+
+1310134940 source:/home/crom/CROMGame/main.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<sstream>
+	<cmath>
+	<vector>
+	<fstream>
+	<ctime>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"main.h"
+	"guifunc.h"
+	"world.h"
+	"VfxHandler.h"
+	"convert.h"
+	"Character.h"
+	"version.h"
+	"convert.h"
+	"utils.h"
+
+1309821143 /home/crom/CROMGame/version.h
+
+1309820430 source:/home/crom/CROMGame/utils.cpp
+	<iostream>
+	<cstdlib>
+	<cmath>
+	<string>
+	<fstream>
+	"main.h"
+	"utils.h"
+
+1310054284 source:/home/crom/CROMGame/world.cpp
+	<cstdlib>
+	<stdlib.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<time.h>
+	"main.h"
+	"world.h"
+
+1309986975 source:/home/crom/CROMGame/main_OLD.cpp
+	<SFML/Graphics.hpp>
+
+1310506448 source:/home/crom/Bureau/CROMGame/Character.cpp
+	<iostream>
+	<cstdlib>
+	<vector>
+	<string>
+	<ctime>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"main.h"
+	"Character.h"
+	"VfxHandler.h"
+	"convert.h"
+	"guifunc.h"
+	"utils.h"
+	"world.h"
+
+1310558202 /home/crom/Bureau/CROMGame/main.h
+
+1310509456 /home/crom/Bureau/CROMGame/Character.h
+	"Inventory.h"
+
+1310471741 /home/crom/Bureau/CROMGame/Inventory.h
+	"Items.h"
+
+1310139387 /home/crom/Bureau/CROMGame/VfxHandler.h
+
+1310139387 /home/crom/Bureau/CROMGame/convert.h
+
+1310509567 /home/crom/Bureau/CROMGame/guifunc.h
+	"Player.h"
+
+1310238564 /home/crom/Bureau/CROMGame/utils.h
+
+1310318700 /home/crom/Bureau/CROMGame/world.h
+
+1310510787 source:/home/crom/Bureau/CROMGame/Inventory.cpp
+	<stdlib.h>
+	<stdio.h>
+	<vector>
+	"main.h"
+	"Inventory.h"
+	"Buttons.h"
+	"guifunc.h"
+
+1310151540 source:/home/crom/Bureau/CROMGame/VfxHandler.cpp
+	<stdio.h>
+	<string.h>
+	<time.h>
+	<iostream>
+	<cstdlib>
+	<vector>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"main.h"
+	"world.h"
+	"convert.h"
+	"VfxHandler.h"
+
+1310139387 source:/home/crom/Bureau/CROMGame/convert.cpp
+	<SFML/Graphics.hpp>
+	"main.h"
+
+1310559588 source:/home/crom/Bureau/CROMGame/main.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<sstream>
+	<cmath>
+	<vector>
+	<fstream>
+	<ctime>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"main.h"
+	"guifunc.h"
+	"world.h"
+	"Vfx.h"
+	"convert.h"
+	"worldedit.h"
+	"utils.h"
+	"Player.h"
+	"sound.h"
+	"store.h"
+	"Buttons.h"
+	"version.h"
+
+1310139387 /home/crom/Bureau/CROMGame/version.h
+
+1310139387 source:/home/crom/Bureau/CROMGame/main_OLD.cpp
+	<SFML/Graphics.hpp>
+
+1310229917 source:/home/crom/Bureau/CROMGame/utils.cpp
+	<iostream>
+	<cstdlib>
+	<cmath>
+	<string>
+	<fstream>
+	<SFML/Graphics.hpp>
+	"main.h"
+	"utils.h"
+
+1310504335 source:/home/crom/Bureau/CROMGame/world.cpp
+	<iostream>
+	<cstdlib>
+	<fstream>
+	<SFML/Graphics.hpp>
+	"main.h"
+	"world.h"
+	"convert.h"
+
+1310558693 source:/home/crom/Bureau/CROMGame/guifunc.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<vector>
+	<sstream>
+	<SFML/Graphics.hpp>
+	"main.h"
+	"convert.h"
+	"guifunc.h"
+	"Buttons.h"
+
+1310479236 /home/crom/Bureau/CROMGame/worldedit.h
+
+1310504481 source:/home/crom/Bureau/CROMGame/worldedit.cpp
+	<iostream>
+	<cstdlib>
+	<fstream>
+	<SFML/Graphics.hpp>
+	"main.h"
+	"convert.h"
+	"world.h"
+	"guifunc.h"
+
+1310472635 source:/home/crom/Bureau/CROMGame/Items.cpp
+	"Items.h"
+
+1310472635 /home/crom/Bureau/CROMGame/Items.h
+	<iostream>
+	<cstdlib>
+	<string>
+	<fstream>
+	<vector>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"main.h"
+	"utils.h"
+
+1310332011 source:/home/crom/Bureau/CROMGame/sound.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+
+1310229096 /home/crom/Bureau/CROMGame/sound.h
+
+1310510856 source:/home/crom/Bureau/CROMGame/store.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<vector>
+	<SFML/Graphics.hpp>
+	"main.h"
+	"convert.h"
+	"guifunc.h"
+	"Items.h"
+	"Buttons.h"
+	"store.h"
+
+1310396159 /home/crom/Bureau/CROMGame/Button.h
+
+1310473987 source:/home/crom/Bureau/CROMGame/ButtonHandler.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<vector>
+	<SFML/Graphics.hpp>
+	"ButtonHandler.h"
+
+1310471789 /home/crom/Bureau/CROMGame/ButtonHandler.h
+
+1310509494 /home/crom/Bureau/CROMGame/store.h
+
+1310559824 /home/crom/Bureau/CROMGame/Player.h
+	"Inventory.h"
+
+1310558680 source:/home/crom/Bureau/CROMGame/Player.cpp
+	<iostream>
+	<cstdlib>
+	<vector>
+	<string>
+	<ctime>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"main.h"
+	"Player.h"
+	"Vfx.h"
+	"convert.h"
+	"guifunc.h"
+	"utils.h"
+	"world.h"
+
+1310510790 source:/home/crom/Bureau/CROMGame/Buttons.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<vector>
+	<SFML/Graphics.hpp>
+	"Buttons.h"
+
+1310471789 /home/crom/Bureau/CROMGame/Buttons.h
+
+1310139387 /home/crom/Bureau/CROMGame/Vfx.h
+
+1310510822 source:/home/crom/Bureau/CROMGame/Vfx.cpp
+	<stdio.h>
+	<string.h>
+	<time.h>
+	<iostream>
+	<cstdlib>
+	<vector>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"main.h"
+	"world.h"
+	"convert.h"
+	"Vfx.h"
+
+1310510790 source:/home/crom/Bureau/CROMGame_SERVER/Buttons.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<vector>
+	<SFML/Graphics.hpp>
+	"Buttons.h"
+
+1310471789 /home/crom/Bureau/CROMGame_SERVER/Buttons.h
+
+1310561027 source:/home/crom/Bureau/CROMGame_SERVER/Inventory.cpp
+	<stdlib.h>
+	<stdio.h>
+	<vector>
+	"main.h"
+	"Inventory.h"
+
+1310826173 /home/crom/Bureau/CROMGame_SERVER/main.h
+
+1310471741 /home/crom/Bureau/CROMGame_SERVER/Inventory.h
+	"Items.h"
+
+1310472635 /home/crom/Bureau/CROMGame_SERVER/Items.h
+	<iostream>
+	<cstdlib>
+	<string>
+	<fstream>
+	<vector>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"main.h"
+	"utils.h"
+
+1310238564 /home/crom/Bureau/CROMGame_SERVER/utils.h
+
+1310509567 /home/crom/Bureau/CROMGame_SERVER/guifunc.h
+	"Player.h"
+
+1310748337 /home/crom/Bureau/CROMGame_SERVER/Player.h
+	<SFML/Network.hpp>
+	"Inventory.h"
+
+1310561067 source:/home/crom/Bureau/CROMGame_SERVER/Items.cpp
+	"Items.h"
+
+1310768965 source:/home/crom/Bureau/CROMGame_SERVER/Player.cpp
+	<iostream>
+	<cstdlib>
+	<vector>
+	<string>
+	<ctime>
+	"main.h"
+	"Player.h"
+	"Vfx.h"
+	"convert.h"
+	"utils.h"
+	"world.h"
+	"threads.h"
+
+1310139387 /home/crom/Bureau/CROMGame_SERVER/Vfx.h
+
+1310139387 /home/crom/Bureau/CROMGame_SERVER/convert.h
+
+1310318700 /home/crom/Bureau/CROMGame_SERVER/world.h
+
+1310561184 source:/home/crom/Bureau/CROMGame_SERVER/Vfx.cpp
+	<stdio.h>
+	<string.h>
+	<time.h>
+	<iostream>
+	<cstdlib>
+	<vector>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"main.h"
+	"world.h"
+	"convert.h"
+	"Vfx.h"
+
+1310139387 source:/home/crom/Bureau/CROMGame_SERVER/convert.cpp
+	<SFML/Graphics.hpp>
+	"main.h"
+
+1310558693 source:/home/crom/Bureau/CROMGame_SERVER/guifunc.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<vector>
+	<sstream>
+	<SFML/Graphics.hpp>
+	"main.h"
+	"convert.h"
+	"guifunc.h"
+	"Buttons.h"
+
+1310332011 source:/home/crom/Bureau/CROMGame_SERVER/sound.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+
+1310510856 source:/home/crom/Bureau/CROMGame_SERVER/store.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<vector>
+	<SFML/Graphics.hpp>
+	"main.h"
+	"convert.h"
+	"guifunc.h"
+	"Items.h"
+	"Buttons.h"
+	"store.h"
+
+1310509494 /home/crom/Bureau/CROMGame_SERVER/store.h
+
+1310229917 source:/home/crom/Bureau/CROMGame_SERVER/utils.cpp
+	<iostream>
+	<cstdlib>
+	<cmath>
+	<string>
+	<fstream>
+	<SFML/Graphics.hpp>
+	"main.h"
+	"utils.h"
+
+1310765704 source:/home/crom/Bureau/CROMGame_SERVER/world.cpp
+	<iostream>
+	<cstdlib>
+	<fstream>
+	<SFML/Graphics.hpp>
+	"main.h"
+	"world.h"
+	"convert.h"
+
+1310504481 source:/home/crom/Bureau/CROMGame_SERVER/worldedit.cpp
+	<iostream>
+	<cstdlib>
+	<fstream>
+	<SFML/Graphics.hpp>
+	"main.h"
+	"convert.h"
+	"world.h"
+	"guifunc.h"
+
+1310824787 source:/home/crom/Bureau/CROMGame_SERVER/main.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<sstream>
+	<cmath>
+	<vector>
+	<fstream>
+	<ctime>
+	<SFML/Network.hpp>
+	"main.h"
+	"world.h"
+	"Vfx.h"
+	"convert.h"
+	"utils.h"
+	"Player.h"
+	"threads.h"
+	"version.h"
+
+1310139387 /home/crom/Bureau/CROMGame_SERVER/version.h
+
+1310824939 source:/home/crom/Bureau/CROMGame_SERVER/treads.cpp
+	<SFML/System.hpp>
+	<SFML/Network.hpp>
+	"threads.h"
+	"Player.h"
+
+1310750524 /home/crom/Bureau/CROMGame_SERVER/threads.h
+

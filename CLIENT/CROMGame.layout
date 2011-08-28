@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="Buttons.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="8230" topLine="77" />
+	</File>
+	<File name="Buttons.h" open="0" top="0" tabpos="10">
+		<Cursor position="1546" topLine="12" />
+	</File>
+	<File name="Gif.cpp" open="1" top="1" tabpos="12">
+		<Cursor position="472" topLine="15" />
+	</File>
+	<File name="Gif.h" open="1" top="0" tabpos="11">
+		<Cursor position="502" topLine="16" />
+	</File>
+	<File name="Inventory.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="11414" topLine="297" />
+	</File>
+	<File name="Inventory.h" open="1" top="0" tabpos="2">
+		<Cursor position="2313" topLine="41" />
+	</File>
+	<File name="Items.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="2646" topLine="54" />
+	</File>
+	<File name="Items.h" open="0" top="0" tabpos="16">
+		<Cursor position="1717" topLine="15" />
+	</File>
+	<File name="Notes.txt" open="0" top="0" tabpos="8">
+		<Cursor position="63" topLine="0" />
+	</File>
+	<File name="Player.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="14862" topLine="458" />
+	</File>
+	<File name="Player.h" open="1" top="0" tabpos="5">
+		<Cursor position="2239" topLine="51" />
+	</File>
+	<File name="Vfx.cpp" open="1" top="0" tabpos="14">
+		<Cursor position="8810" topLine="289" />
+	</File>
+	<File name="Vfx.h" open="1" top="0" tabpos="13">
+		<Cursor position="1197" topLine="27" />
+	</File>
+	<File name="convert.cpp" open="0" top="0" tabpos="9">
+		<Cursor position="543" topLine="0" />
+	</File>
+	<File name="convert.h" open="0" top="0" tabpos="12">
+		<Cursor position="673" topLine="0" />
+	</File>
+	<File name="guifunc.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="8331" topLine="136" />
+	</File>
+	<File name="guifunc.h" open="0" top="0" tabpos="3">
+		<Cursor position="372" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="8447" topLine="309" />
+	</File>
+	<File name="main.h" open="1" top="0" tabpos="9">
+		<Cursor position="4371" topLine="147" />
+	</File>
+	<File name="serverlist.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="347" topLine="0" />
+	</File>
+	<File name="sound.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="2306" topLine="18" />
+	</File>
+	<File name="sound.h" open="0" top="0" tabpos="17">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="store.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="205" topLine="0" />
+	</File>
+	<File name="store.h" open="0" top="0" tabpos="5">
+		<Cursor position="105" topLine="0" />
+	</File>
+	<File name="utils.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="7144" topLine="0" />
+	</File>
+	<File name="utils.h" open="0" top="0" tabpos="18">
+		<Cursor position="537" topLine="0" />
+	</File>
+	<File name="version.h" open="0" top="0" tabpos="13">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="world.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="553" topLine="3" />
+	</File>
+	<File name="world.h" open="0" top="0" tabpos="5">
+		<Cursor position="64" topLine="0" />
+	</File>
+	<File name="worldedit.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="4447" topLine="150" />
+	</File>
+	<File name="worldedit.h" open="0" top="0" tabpos="15">
+		<Cursor position="120" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

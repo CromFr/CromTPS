@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="Inventory.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="11492" topLine="278" />
+	</File>
+	<File name="Inventory.h" open="0" top="0" tabpos="19">
+		<Cursor position="2349" topLine="18" />
+	</File>
+	<File name="Items.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="5229" topLine="24" />
+	</File>
+	<File name="Items.h" open="0" top="0" tabpos="16">
+		<Cursor position="1717" topLine="39" />
+	</File>
+	<File name="Notes.txt" open="0" top="0" tabpos="8">
+		<Cursor position="63" topLine="0" />
+	</File>
+	<File name="Player.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="1076" topLine="6" />
+	</File>
+	<File name="Player.h" open="0" top="0" tabpos="9">
+		<Cursor position="2290" topLine="43" />
+	</File>
+	<File name="Vfx.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="3814" topLine="0" />
+	</File>
+	<File name="convert.cpp" open="0" top="0" tabpos="9">
+		<Cursor position="543" topLine="0" />
+	</File>
+	<File name="convert.h" open="0" top="0" tabpos="12">
+		<Cursor position="673" topLine="0" />
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="7289" topLine="174" />
+	</File>
+	<File name="main.h" open="0" top="0" tabpos="7">
+		<Cursor position="699" topLine="3" />
+	</File>
+	<File name="threads.h" open="0" top="0" tabpos="8">
+		<Cursor position="195" topLine="0" />
+	</File>
+	<File name="treads.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="3797" topLine="113" />
+	</File>
+	<File name="utils.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="1060" topLine="0" />
+	</File>
+	<File name="utils.h" open="0" top="0" tabpos="18">
+		<Cursor position="537" topLine="0" />
+	</File>
+	<File name="version.h" open="0" top="0" tabpos="13">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="world.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="228" topLine="0" />
+	</File>
+	<File name="world.h" open="0" top="0" tabpos="5">
+		<Cursor position="64" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

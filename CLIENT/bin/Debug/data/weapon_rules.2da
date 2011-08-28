@@ -1,0 +1,15 @@
+#WEAPON_TYPE                        WEAPON_DAMAGE_TYPE      WEAPON_FIRE_DELAY        WEAPON_FIRE_SOUND
+#       WEAPON_PRICE                        WEAPON_DAMAGE           WEAPON_RELOAD_DELAY                       WEAPON_IMPACT_SOUND
+#               WEAPON_NAME                         WEAPON_STOCK	    WEAPON_RANGE
+#
+0       0       UNDEFINED           0       0       0       0.0     0.0     0	     *                        *
+1       100     Pistolet            1       10      12      0.3     1.0     600      bullet_pistol.wav        *
+2       300     Fusil               1       25      12      0.5     2.0	    1200     bullet_rifle.wav         *
+3       1000    Minigun             1       8       30      0.1     4.0     900      bullet_minigun.wav       *
+11      600     Pisto-Laser         2       20      12      0.3     1.0     700      laser_rifle.wav          *
+12      1200    Fusil-Laser         2       40      14      0.5     2.0     1300     laser_rifle.wav          *
+13      2200    Minigun-Laser       2       15      35      0.1     4.0     1000     laser_rifle.wav          *
+21      2000    Pisto-Gauss         3       30      12      0.3     1.0     900      gauss_pistol.wav         *
+22      2800    Fusil-Gauss         3       60      15      0.5     2.0     1500     gauss_rifle.wav          *
+23      4000    Minigun-Gauss       3       25      40      0.1     4.0     1100     gauss_rifle.wav          *
+24      8000    Destructeur-Gauss   3       150     2       1.0     3.0     2000     gauss_destructeur.wav    *

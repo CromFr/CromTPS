@@ -1,0 +1,12 @@
+#ARMOR_TYPE                               ARMOR_RD_VS_BULLETS
+#       ARMOR_PRICE                               ARMOR_RD_VS_LASER
+#               ARMOR_NAME                                ARMOR_RD_VS_GAUSS
+#
+0       0       UNDEFINED                 0       0       0
+1       0       (a)poil                   0       0       0
+2       300     Armure-Legere             10      10      10
+3       700     Armure-Moyenne            20      20      20
+4       1200    Armure_Lourde             30      30      30
+10      1000    Kevlar                    50      15      15
+11      1000    Armure-reflechissante     15      50      15
+12      1000    Syst.a-2527inconnues      15      15      50
