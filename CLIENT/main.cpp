@@ -148,6 +148,7 @@ Image oEffectBlood2;
 
 //=======================================
 struct GifTemplate* giftplTest=0;
+struct GifTemplate* giftplExplosion=0;
 
 //===================================================================================================================
 //Sounds ============================================================================================================
@@ -186,13 +187,12 @@ Vfx::Vfx oVfx;
 Font GameFont;
 //===================================================================================================================
 //===================================================================================================================
-RenderWindow oApp(VideoMode(1200, 900, 32), "CROMGame", Style::Titlebar | Style::Close);
-
-
-
 
 void Game();
 
+int SCREEN_WIDTH=1200;//1200;//800;
+int SCREEN_HEIGHT=900;//900;//600;
+RenderWindow oApp(VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32), "CROMGame", Style::Titlebar | Style::Close | Style::Resize);
 
 
 int main()
@@ -228,13 +228,17 @@ int main()
 
     std::cout<<"Complete !"<<std::endl;
     //==================================================================
-    Gif::Gif oGifTest(giftplTest, Vector2f(300, 300));// TODO (crom#1#): a suppr
+
+
+    GifHandler::GifHandler oGifHandler;// TODO (crom#1#): a suppr
+    oGifHandler.AddGif(giftplTest, Vector2f(300, 300));
+    oGifHandler.AddGif(giftplExplosion, Vector2f(600, 300));
 
 
     ButtonHandler::ButtonHandler Buttons;
-    Buttons.AddButton(DIM_WINDOW_WIDTH/2, 400, "Jouer", 1);
-    Buttons.AddButton(DIM_WINDOW_WIDTH/2, 500, "Editeur", 2);
-    Buttons.AddButton(DIM_WINDOW_WIDTH/2, 600, "Liste Servers", 3);
+    Buttons.AddButtonPercent(50, 30, "Jouer", 1);
+    Buttons.AddButtonPercent(50, 50, "Editeur", 2);
+    Buttons.AddButtonPercent(50, 70, "Liste Servers", 3);
 
     int nButtonPressed=0;
 
@@ -313,7 +317,8 @@ int main()
         DrawCursor(vPosMouse);
 
 
-        oGifTest.Draw();
+        //Draw des Gifs
+        oGifHandler.Draw();
 
 
 
@@ -363,7 +368,7 @@ void Game()
     PC::PC oPC(1);
 
     Inventory::Inventory* pInventaire = oPC.GetInventory();
-    Item::Item* pItem = pInventaire->AddItem(MakeItemTemplate(ITEM_TYPE_WEAPON, WEAPON_TYPE_GAUSS_MINIGUN));
+    Item::Item* pItem = pInventaire->AddItem(MakeItemTemplate(ITEM_TYPE_WEAPON, WEAPON_TYPE_LASER_RIFLE));
     pInventaire->EquipItem(pItem);
 
     pInventaire->AddItem(MakeItemTemplate(ITEM_TYPE_WEAPON, WEAPON_TYPE_GAUSS_DESTRUCTEUR));

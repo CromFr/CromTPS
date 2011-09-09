@@ -7,6 +7,9 @@
 #include "world.h"
 #include "convert.h"
 
+extern int SCREEN_WIDTH;
+extern int SCREEN_HEIGHT;
+
 extern int nWorld[WORLD_HEIGHT_CUBE][WORLD_WIDTH_CUBE];
 extern int nWorldSpe[WORLD_HEIGHT_CUBE][WORLD_WIDTH_CUBE];
 
@@ -145,8 +148,8 @@ bool GetIsCollisionPJWithWorld(struct worldpospx pPosPX)
 
 bool GetIsCoordScreenPxInWorld(sf::Vector2<float>::Vector2<float> vPos)
 {
-    if(   vPos.x>COORD_OFFSET_WORLD_X && vPos.x<DIM_WINDOW_WIDTH-COORD_OFFSET_WORLD_X
-       && vPos.y>COORD_OFFSET_WORLD_Y && vPos.y<DIM_WINDOW_HEIGHT-COORD_OFFSET_WORLD_Y)
+    if(   vPos.x>COORD_OFFSET_WORLD_X && vPos.x<SCREEN_WIDTH-COORD_OFFSET_WORLD_X
+       && vPos.y>COORD_OFFSET_WORLD_Y && vPos.y<SCREEN_HEIGHT-COORD_OFFSET_WORLD_Y)
        return true;
     return false;
 

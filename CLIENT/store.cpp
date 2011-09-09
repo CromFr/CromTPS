@@ -17,6 +17,8 @@
 using namespace sf;
 
 //Application :
+extern int SCREEN_WIDTH;
+extern int SCREEN_HEIGHT;
 extern RenderWindow oApp;
 
 
@@ -25,10 +27,10 @@ void Store(PC::PC* oPC)
 {
     ButtonHandler::ButtonHandler Buttons;
 
-    Buttons.AddButton(DIM_WINDOW_WIDTH/2, 400, "Armes", 1);
-    Buttons.AddButton(DIM_WINDOW_WIDTH/2, 500, "Armures", 2);
-    Buttons.AddButton(DIM_WINDOW_WIDTH/2, 600, "Blocs", 3);
-    Buttons.AddButton(DIM_WINDOW_WIDTH/2, 700, "Divers", 4);
+    Buttons.AddButton(SCREEN_WIDTH/2, 200, "Armes", 1);
+    Buttons.AddButton(SCREEN_WIDTH/2, 300, "Armures", 2);
+    Buttons.AddButton(SCREEN_WIDTH/2, 400, "Blocs", 3);
+    Buttons.AddButton(SCREEN_WIDTH/2, 500, "Divers", 4);
 
     int nButtonPressed=0;
 
@@ -125,18 +127,18 @@ void Store_Weapons(PC::PC* oPC)
 {
     ButtonHandler::ButtonHandler Buttons;
 
-    Buttons.AddButton(DIM_WINDOW_WIDTH/4, 200, "", 1, 101);
-    Buttons.AddButton(DIM_WINDOW_WIDTH/4, 350, "", 2, 102);
-    Buttons.AddButton(DIM_WINDOW_WIDTH/4, 500, "", 3, 103);
+    Buttons.AddButton(SCREEN_WIDTH/4, 100, "", 1, 101);
+    Buttons.AddButton(SCREEN_WIDTH/4, 250, "", 2, 102);
+    Buttons.AddButton(SCREEN_WIDTH/4, 400, "", 3, 103);
 
-    Buttons.AddButton(DIM_WINDOW_WIDTH/2, 200, "", 4, 111);
-    Buttons.AddButton(DIM_WINDOW_WIDTH/2, 350, "", 5, 112);
-    Buttons.AddButton(DIM_WINDOW_WIDTH/2, 500, "", 6, 113);
+    Buttons.AddButton(SCREEN_WIDTH/2, 100, "", 4, 111);
+    Buttons.AddButton(SCREEN_WIDTH/2, 250, "", 5, 112);
+    Buttons.AddButton(SCREEN_WIDTH/2, 400, "", 6, 113);
 
-    Buttons.AddButton(3*DIM_WINDOW_WIDTH/4, 200, "", 7, 121);
-    Buttons.AddButton(3*DIM_WINDOW_WIDTH/4, 350, "", 8, 122);
-    Buttons.AddButton(3*DIM_WINDOW_WIDTH/4, 500, "", 9, 123);
-    Buttons.AddButton(3*DIM_WINDOW_WIDTH/4, 650, "", 10, 124);
+    Buttons.AddButton(3*SCREEN_WIDTH/4, 100, "", 7, 121);
+    Buttons.AddButton(3*SCREEN_WIDTH/4, 250, "", 8, 122);
+    Buttons.AddButton(3*SCREEN_WIDTH/4, 400, "", 9, 123);
+    Buttons.AddButton(3*SCREEN_WIDTH/4, 550, "", 10, 124);
 
     int nButtonPressed=0;
 

@@ -56,6 +56,10 @@ class ButtonHandler
     ///l'ID doit etre superieure à 0 (strict)
     void AddButton(int nPosCenterX, int nPosCenterY, std::string sText, int nID, int nSkin=0);
 
+    ///Idem mais avec des positions en pourcentage d'écran
+    ///Possibilité de mettre un offset, pour décaler les boutons, qui peut être positif ou négatif
+    void AddButtonPercent(float fPosCenterXPercent, float fPosCenterYPercent, std::string sText, int nID, int nOffsetX=0, int nOffsetY=0, int nSkin=0);
+
     ///Dessine les boutons
     void DrawButtons() const;
 

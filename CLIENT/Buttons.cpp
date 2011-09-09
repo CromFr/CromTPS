@@ -8,6 +8,8 @@
 #include "Buttons.h"
 
 
+extern int SCREEN_WIDTH;
+extern int SCREEN_HEIGHT;
 extern sf::RenderWindow oApp;
 
 /*==*/ extern sf::Image oButton0Inactive;
@@ -259,6 +261,14 @@ void ButtonHandler::AddButton(int nPosCenterX, int nPosCenterY, std::string sTex
 {
     Button::Button* pButton=0;
     pButton = new Button::Button(nPosCenterX-_BUTTON_WIDTH/2, nPosCenterY-_BUTTON_HEIGHT/2, sText, nID, nSkin);
+
+    ButtonHandler::m_pListeButton.push_back(pButton);
+}
+//=====================================================================
+void ButtonHandler::AddButtonPercent(float fPosCenterXPercent, float fPosCenterYPercent, std::string sText, int nID, int nOffsetX, int nOffsetY, int nSkin)
+{
+    Button::Button* pButton=0;
+    pButton = new Button::Button(nOffsetX+SCREEN_WIDTH*(fPosCenterXPercent/100)-_BUTTON_WIDTH/2, nOffsetY+SCREEN_HEIGHT*(fPosCenterYPercent/100)-_BUTTON_HEIGHT/2, sText, nID, nSkin);
 
     ButtonHandler::m_pListeButton.push_back(pButton);
 }

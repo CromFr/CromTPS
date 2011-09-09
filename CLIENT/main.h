@@ -137,8 +137,8 @@ Y, Height, arg1
 #define VITESSE_CHARACTER_PX_S 300
 
 //Taille de la fenetre:
-#define DIM_WINDOW_WIDTH 1200
-#define DIM_WINDOW_HEIGHT 900
+//#define DIM_WINDOW_WIDTH 1200
+//#define DIM_WINDOW_HEIGHT 900
 
 //Tailles des images
 #define DIM_CURSOR_WIDTH 40

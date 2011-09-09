@@ -174,16 +174,10 @@ bool Inventory::EquipItem(Item::Item* pItemToEquip)//true si objet correctement 
                 Inventory::m_pItemList[nRowItemToEquip] = 0;
                 return true;
             case ITEM_TYPE_ARMOR:
-                //On désequippe l'item déja en place :
-                //On lie l'item à désequipper à l'inventaire (il y a deux liens)
                 Inventory::LinkItem(Inventory::GetEquipedItem(EQUIPMENT_PART_ARMOR));
-                //  et on suppr le lien avec le corps (plus qu'un lien)
                 Inventory::m_pArmorEquipped = 0;
 
-                //Puis on équippe l'item en question
-                //On lie l'item à equipper au corps (il y a deux liens)
                 Inventory::m_pArmorEquipped = pItemToEquip;
-                //   et on suppr le lien avec l'inventaire (plus qu'un lien)
                 Inventory::m_pItemList[nRowItemToEquip] = 0;
                 return true;
         }
@@ -223,7 +217,6 @@ void Inventory::Empty()
         {
             delete Inventory::m_pItemList[n];//On suppr l'item
             Inventory::m_pItemList[n] = 0;//On remet le pointeur à 0
-            //Inventory::DelItem(Inventory::m_pItemList[n]);
         }
     }
     //Réduction de la liste des items

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CROMGame_CLIENT" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/CROMGame" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/CROMGame" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add library="sfml-audio" />
+			<Add library="sfml-graphics" />
+			<Add library="sfml-network" />
+			<Add library="sfml-system" />
+			<Add library="sfml-window" />
+		</Linker>
+		<Unit filename="Buttons.cpp" />
+		<Unit filename="Buttons.h" />
+		<Unit filename="Gif.cpp" />
+		<Unit filename="Gif.h" />
+		<Unit filename="Inventory.cpp" />
+		<Unit filename="Inventory.h" />
+		<Unit filename="Items.cpp" />
+		<Unit filename="Items.h" />
+		<Unit filename="Notes.txt" />
+		<Unit filename="Player.cpp" />
+		<Unit filename="Player.h" />
+		<Unit filename="Vfx.cpp" />
+		<Unit filename="Vfx.h" />
+		<Unit filename="convert.cpp" />
+		<Unit filename="convert.h" />
+		<Unit filename="data/armor_rules.2da" />
+		<Unit filename="data/img/blood1.png" />
+		<Unit filename="data/img/blood2.png" />
+		<Unit filename="data/img/character_blue.png" />
+		<Unit filename="data/img/character_green.png" />
+		<Unit filename="data/img/character_red.png" />
+		<Unit filename="data/img/cur.png" />
+		<Unit filename="data/img/explosion.png" />
+		<Unit filename="data/img/gamescreen.bmp" />
+		<Unit filename="data/img/inputbox.bmp" />
+		<Unit filename="data/img/postexplosion.png" />
+		<Unit filename="data/img/questionbox.bmp" />
+		<Unit filename="data/img/ray_bullet.png" />
+		<Unit filename="data/img/ray_bullet_impact.png" />
+		<Unit filename="data/img/ray_gauss.png" />
+		<Unit filename="data/img/ray_gauss_impact.png" />
+		<Unit filename="data/img/ray_laser.png" />
+		<Unit filename="data/img/ray_laser_impact.png" />
+		<Unit filename="data/img/welcomescreen.bmp" />
+		<Unit filename="data/img/world_crate_a.bmp" />
+		<Unit filename="data/img/world_floor_rock.bmp" />
+		<Unit filename="data/img/world_gap.bmp" />
+		<Unit filename="data/img/world_notset.bmp" />
+		<Unit filename="data/potion_rules.2da" />
+		<Unit filename="data/weapon_rules.2da" />
+		<Unit filename="guifunc.cpp" />
+		<Unit filename="guifunc.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="main.h" />
+		<Unit filename="serverlist.cpp" />
+		<Unit filename="serverlist.h" />
+		<Unit filename="sound.cpp" />
+		<Unit filename="sound.h" />
+		<Unit filename="store.cpp" />
+		<Unit filename="store.h" />
+		<Unit filename="utils.cpp" />
+		<Unit filename="utils.h" />
+		<Unit filename="version.h" />
+		<Unit filename="world.cpp" />
+		<Unit filename="world.h" />
+		<Unit filename="worldedit.cpp" />
+		<Unit filename="worldedit.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

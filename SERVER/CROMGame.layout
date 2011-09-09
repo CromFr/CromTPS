@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="Inventory.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="11492" topLine="278" />
+	<File name="Inventory.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="10144" topLine="239" />
 	</File>
 	<File name="Inventory.h" open="0" top="0" tabpos="19">
 		<Cursor position="2349" topLine="18" />
@@ -13,8 +13,8 @@
 	<File name="Items.h" open="0" top="0" tabpos="16">
 		<Cursor position="1717" topLine="39" />
 	</File>
-	<File name="Notes.txt" open="0" top="0" tabpos="8">
-		<Cursor position="63" topLine="0" />
+	<File name="Notes.txt" open="1" top="0" tabpos="1">
+		<Cursor position="41" topLine="0" />
 	</File>
 	<File name="Player.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="1076" topLine="6" />
@@ -31,11 +31,11 @@
 	<File name="convert.h" open="0" top="0" tabpos="12">
 		<Cursor position="673" topLine="0" />
 	</File>
-	<File name="main.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="7289" topLine="174" />
+	<File name="main.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="5779" topLine="222" />
 	</File>
-	<File name="main.h" open="0" top="0" tabpos="7">
-		<Cursor position="699" topLine="3" />
+	<File name="main.h" open="1" top="0" tabpos="3">
+		<Cursor position="382" topLine="148" />
 	</File>
 	<File name="threads.h" open="0" top="0" tabpos="8">
 		<Cursor position="195" topLine="0" />

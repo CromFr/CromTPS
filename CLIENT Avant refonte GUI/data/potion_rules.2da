@@ -1,0 +1,8 @@
+#POTION_TYPE                              POTION_HPHEAL      
+#       POTION_PRICE                          
+#               POTION_NAME                    
+#
+0       0       UNDEFINED-POTION          0
+1       50      Potion-Frelatee           20
+2       100     Potion-Normale            40
+3       200     Potion-de-Qualite         60

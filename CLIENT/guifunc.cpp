@@ -13,6 +13,8 @@
 using namespace sf;
 
 //Application :
+extern int SCREEN_WIDTH;
+extern int SCREEN_HEIGHT;
 extern RenderWindow oApp;
 
 /*====> Liste des images ============*/
@@ -329,7 +331,7 @@ void DrawWorld()
 
 void DrawCursor(Vector2<float>::Vector2<float> vPosition)
 {
-    if(vPosition.x>0 && vPosition.x<DIM_WINDOW_WIDTH && vPosition.y>0 && vPosition.y<DIM_WINDOW_HEIGHT)
+    if(vPosition.x>0 && vPosition.x<SCREEN_WIDTH && vPosition.y>0 && vPosition.y<SCREEN_HEIGHT)
     {
         sprCursor.SetPosition(Vector2f(vPosition.x-(DIM_CURSOR_WIDTH/2), vPosition.y-(DIM_CURSOR_HEIGHT/2)));
         oApp.Draw(sprCursor);
@@ -407,7 +409,7 @@ void DrawPlayerInfo(PC::PC* oPC)
 
 std::string InputBox(const char* cPrezText, bool bEscape)
 {
-    sprInputBox.SetPosition(Vector2f((DIM_WINDOW_WIDTH-DIM_SCREEN_ENTRYBOX_WIDTH)/2, (DIM_WINDOW_HEIGHT-DIM_SCREEN_ENTRYBOX_HEIGHT)/2));
+    sprInputBox.SetPosition(Vector2f((SCREEN_WIDTH-DIM_SCREEN_ENTRYBOX_WIDTH)/2, (SCREEN_HEIGHT-DIM_SCREEN_ENTRYBOX_HEIGHT)/2));
 
 
     std::string sInput = ("");
@@ -416,7 +418,7 @@ std::string InputBox(const char* cPrezText, bool bEscape)
 
     sAffichage.SetColor(Color(0, 0, 0));
 
-    sTitre.SetPosition((DIM_WINDOW_WIDTH-sTitre.GetRect().GetWidth())/2, (DIM_WINDOW_HEIGHT-sTitre.GetRect().GetHeight())/2-110);
+    sTitre.SetPosition((SCREEN_WIDTH-sTitre.GetRect().GetWidth())/2, (SCREEN_HEIGHT-sTitre.GetRect().GetHeight())/2-110);
     sTitre.SetColor(Color(0, 0, 0));
 
 
@@ -678,7 +680,7 @@ std::string InputBox(const char* cPrezText, bool bEscape)
         oApp.Draw(sTitre);
 
         sAffichage.SetText(sInput.c_str());
-        sAffichage.SetPosition(Vector2f( (DIM_WINDOW_WIDTH-sAffichage.GetRect().GetWidth())/2, (DIM_WINDOW_HEIGHT-sAffichage.GetRect().GetHeight())/2+60));
+        sAffichage.SetPosition(Vector2f( (SCREEN_WIDTH-sAffichage.GetRect().GetWidth())/2, (SCREEN_HEIGHT-sAffichage.GetRect().GetHeight())/2+60));
         oApp.Draw(sAffichage);
 
         oApp.Display();
@@ -695,18 +697,18 @@ std::string InputBox(const char* cPrezText, bool bEscape)
 int QuestionBox(const char* cQuestion, bool bEscape, const char* cYes, bool bNo, const char* cNo)
 {
     String sTitre(cQuestion, GameFont);
-    sTitre.SetPosition((DIM_WINDOW_WIDTH-sTitre.GetRect().GetWidth())/2, (DIM_WINDOW_HEIGHT-DIM_SCREEN_ENTRYBOX_HEIGHT-sTitre.GetRect().GetHeight())/2+70);
+    sTitre.SetPosition((SCREEN_WIDTH-sTitre.GetRect().GetWidth())/2, (SCREEN_HEIGHT-DIM_SCREEN_ENTRYBOX_HEIGHT-sTitre.GetRect().GetHeight())/2+70);
     sTitre.SetColor(Color(255, 255, 255));
 
     ButtonHandler::ButtonHandler Buttons;
     if(bNo)//Si il y a deux boutons
     {
-        Buttons.AddButton(DIM_WINDOW_WIDTH/2-150, 600, cNo, 1);
-        Buttons.AddButton(DIM_WINDOW_WIDTH/2+150, 600, cYes, 2);
+        Buttons.AddButton(SCREEN_WIDTH/2-150, 600, cNo, 1);
+        Buttons.AddButton(SCREEN_WIDTH/2+150, 600, cYes, 2);
     }
     else
     {
-        Buttons.AddButton(DIM_WINDOW_WIDTH/2, 600, cYes, 2);
+        Buttons.AddButton(SCREEN_WIDTH/2, 600, cYes, 2);
     }
 
 
