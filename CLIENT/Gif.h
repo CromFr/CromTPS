@@ -106,8 +106,12 @@ class GifHandler
     void Draw();
 
     ///Ajoute un gif au gestionnaire
-    void AddGif(struct GifTemplate *Template, sf::Vector2<float>::Vector2<float> pPosition, float fFacing=0);
+    ///Renvoie l'addr du gif ajouté dans le tableau du gif (pointe sur la case qui pointe sur le gif, ainsi si le gif est suppr, Gif::Gif** pointera sur 0)
+    Gif::Gif** AddGif(struct GifTemplate *Template, sf::Vector2<float>::Vector2<float> pPosition, float fFacing=0);
 
+    ///Supprime un gif de la liste afin de ne plus l'afficher
+    ///Renvoie TRUE si un gif a été suppr, FALSE si aucun n'a été trouvé
+    bool RemoveGif(Gif::Gif** ppGif);
 
     ///Supprime tous les gifs
     void Clear();

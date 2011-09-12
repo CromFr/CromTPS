@@ -305,7 +305,7 @@ int Gif::GetCurrentFrameID()const
 //=================================================================================================================================================
 sf::Sprite *Gif::GetNextFrameSprite(int nCurID)
 {
-    int nIDFrame;
+    int nIDFrame=-1;
     if(nCurID!=-1)
         nIDFrame = nCurID;
     else
@@ -370,7 +370,7 @@ void GifHandler::Draw()
         }
 }
 //=================================================================================================================================================
-void GifHandler::AddGif(struct GifTemplate *Template, sf::Vector2<float>::Vector2<float> pPosition, float fFacing)
+Gif::Gif** GifHandler::AddGif(struct GifTemplate *Template, sf::Vector2<float>::Vector2<float> pPosition, float fFacing)
 {
     int nSize = GifHandler::m_pGifList.size();
     int nEmplacement = -1;
@@ -398,6 +398,22 @@ void GifHandler::AddGif(struct GifTemplate *Template, sf::Vector2<float>::Vector
         GifHandler::m_pGifList[nEmplacement] = pGifToAdd;
     }
 
+    return &(GifHandler::m_pGifList[nEmplacement]);
+}
+//=================================================================================================================================================
+bool GifHandler::RemoveGif(Gif::Gif** ppGif)
+{
+    if(*ppGif!=0)
+    {
+        delete *ppGif;//Suppr du gif
+
+        *ppGif=0;//Mise à 0 du pointeur situé dans le tableau
+
+        ppGif=0;//Mise à 0 du pointeur qui pointe sur le tableau
+
+        return true;
+    }
+    return false;
 
 }
 //=================================================================================================================================================

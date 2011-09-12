@@ -232,8 +232,9 @@ int main()
 
     GifHandler::GifHandler oGifHandler;// TODO (crom#1#): a suppr
     oGifHandler.AddGif(giftplTest, Vector2f(300, 300));
-    oGifHandler.AddGif(giftplExplosion, Vector2f(600, 300));
-
+    Gif::Gif** ppGif = oGifHandler.AddGif(giftplExplosion, Vector2f(600, 300));
+    Gif::Gif* pGif =  *ppGif;
+    //pGif->SetPosition(Vector2f(300, 600));
 
     ButtonHandler::ButtonHandler Buttons;
     Buttons.AddButtonPercent(50, 30, "Jouer", 1);
