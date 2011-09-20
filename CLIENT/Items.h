@@ -36,25 +36,13 @@ class Item
     public:
     Item();
 
+    virtual Item* GetObject();
+
     bool GetIsItemValid() const;
     struct itTemplate GetTemplate() const;
     std::string GetName() const;
     void Display() const;
 
-    virtual int Weapon_Fire()=0;
-    virtual void Weapon_Reload()=0;//retourne 1 si il faut recharger
-    virtual void Weapon_PlaySound(int nSoundType) const=0;//0:tir, 1:Impact
-    virtual float Weapon_GetReusableDateAfterEvent(int nEvent) const=0;//0:Event de tir, 1 de reload
-    virtual int Weapon_GetDamageType() const=0;
-    virtual int Weapon_GetDamageAmount() const=0;//Calcul aléatoire
-    virtual int Weapon_GetCurrAmmo() const=0;
-    virtual int Weapon_GetRange() const=0;
-
-    virtual int Armor_GetReduction(int nDamageType) const=0;
-
-    virtual int Potion_GetHpHeal() const=0;//Calcul aléatoire
-
-    //virtual int Armor_GetReduction(int nDamageType) const=0;
 
     protected:
     int m_nType;
@@ -72,18 +60,16 @@ class Weapon : public Item
     public:
     Weapon(int nType);//A la création, préciser le typetype
 
-    virtual int Weapon_Fire();//retourne 1 si il faut recharger
-    virtual void Weapon_Reload();//retourne 1 si il faut recharger
-    virtual void Weapon_PlaySound(int nSoundType) const;//0:tir, 1:Impact
-    virtual float Weapon_GetReusableDateAfterEvent(int nEvent) const;//0:Event de tir, 1 de reload
-    virtual int Weapon_GetDamageType() const;
-    virtual int Weapon_GetDamageAmount() const;//Calcul aléatoire
-    virtual int Weapon_GetCurrAmmo() const;
-    virtual int Weapon_GetRange() const;
+    virtual Weapon* GetObject();
 
-    //Inactives
-    virtual int Armor_GetReduction(int nDamageType) const;
-    virtual int Potion_GetHpHeal() const;//Calcul aléatoire
+    int Weapon_Fire();//retourne 1 si il faut recharger
+    void Weapon_Reload();//retourne 1 si il faut recharger
+    void Weapon_PlaySound(int nSoundType) const;//0:tir, 1:Impact
+    float Weapon_GetReusableDateAfterEvent(int nEvent) const;//0:Event de tir, 1 de reload
+    int Weapon_GetDamageType() const;
+    int Weapon_GetDamageAmount() const;//Calcul aléatoire
+    int Weapon_GetCurrAmmo() const;
+    int Weapon_GetRange() const;
 
     private:
     int m_nDamageType;//Types de dg infligés
@@ -103,19 +89,9 @@ class Armor : public Item
     public:
     Armor(int nType);//A la création, préciser le typetype
 
+    virtual Armor* GetObject();
 
-    virtual int Armor_GetReduction(int nDamageType) const;
-
-    //Inactives
-    virtual int Weapon_Fire();//retourne 1 si il faut recharger
-    virtual void Weapon_Reload();//retourne 1 si il faut recharger
-    virtual void Weapon_PlaySound(int nSoundType) const;//0:tir, 1:Impact
-    virtual float Weapon_GetReusableDateAfterEvent(int nEvent) const;//0:Event de tir, 1 de reload
-    virtual int Weapon_GetDamageType() const;
-    virtual int Weapon_GetDamageAmount() const;//Calcul aléatoire
-    virtual int Weapon_GetCurrAmmo() const;
-    virtual int Weapon_GetRange() const;
-    virtual int Potion_GetHpHeal() const;//Calcul aléatoire
+    int Armor_GetReduction(int nDamageType) const;
 
     private:
     int m_nReductionVsBullet;
@@ -129,18 +105,9 @@ class Potion : public Item
     public:
     Potion(int nType);//A la création, préciser le typetype
 
-    virtual int Potion_GetHpHeal() const;//Calcul aléatoire
+    virtual Potion* GetObject();
 
-    //Inactives
-    virtual int Weapon_Fire();//retourne 1 si il faut recharger
-    virtual void Weapon_Reload();//retourne 1 si il faut recharger
-    virtual void Weapon_PlaySound(int nSoundType) const;//0:tir, 1:Impact
-    virtual float Weapon_GetReusableDateAfterEvent(int nEvent) const;//0:Event de tir, 1 de reload
-    virtual int Weapon_GetDamageType() const;
-    virtual int Weapon_GetDamageAmount() const;//Calcul aléatoire
-    virtual int Weapon_GetCurrAmmo() const;
-    virtual int Weapon_GetRange() const;
-    virtual int Armor_GetReduction(int nDamageType) const;
+    int Potion_GetHpHeal() const;//Calcul aléatoire
 
     private:
     int m_nBaseHpHeal;
@@ -153,6 +120,7 @@ class PlaceableItem : public Item
 {
     public:
     PlaceableItem();
+
 
     private:
     int m_nPlaceableType;

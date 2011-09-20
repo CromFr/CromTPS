@@ -114,8 +114,11 @@ void PC::FireAtPosition(struct worldpospx pPosVisee)
     if(PC::m_fReloadDelayDateEnd>fDate)//si le joueur doit recharger
         return;
 
-    Item::Item* pWeapon = PC::m_oInventaire.GetEquipedItem(EQUIPMENT_PART_WEAPON);
-    if(pWeapon == 0)return;
+    Item::Item* pItem = PC::m_oInventaire.GetEquipedItem(EQUIPMENT_PART_WEAPON);
+    if(pItem == 0)return;
+
+    Weapon* pWeapon;
+    pWeapon = pItem->GetObject();
 
     int nRange = pWeapon->Weapon_GetRange();
     int nDamageType = pWeapon->Weapon_GetDamageType();

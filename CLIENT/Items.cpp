@@ -67,6 +67,11 @@ Item::Item()
 
 }
 //============================================================================================================================================
+Item* Item::GetObject()
+{
+    return this;
+}
+//============================================================================================================================================
 bool Item::GetIsItemValid() const
 {
     if(Item::m_nType!=0)
@@ -139,6 +144,11 @@ Weapon::Weapon(int nType)
     Weapon::m_sndReload=0;
 }
 //=====================================================
+Weapon* Weapon::GetObject()
+{
+    return this;
+}
+//=====================================================
 int Weapon::Weapon_Fire()
 {
     Weapon::m_nCurrAmmo--;
@@ -204,9 +214,6 @@ int Weapon::Weapon_GetRange() const
 {
     return Weapon::m_nRange;
 }
-//=====================================================
-int Weapon::Armor_GetReduction(int nDamageType) const{return 0;}
-int Weapon::Potion_GetHpHeal() const{return 0;}
 //============================================================================================================================================
 //============================================================================================================================================
 Armor::Armor(int nType)
@@ -219,6 +226,11 @@ Armor::Armor(int nType)
     Armor::m_nReductionVsBullet = Get2daInt("armor_rules.2da", nType, _2DA_ARMOR_RD_VS_BULLETS);
     Armor::m_nReductionVsLaser = Get2daInt("armor_rules.2da", nType, _2DA_ARMOR_RD_VS_LASER);
     Armor::m_nReductionVsGauss = Get2daInt("armor_rules.2da", nType, _2DA_ARMOR_RD_VS_GAUSS);
+}
+//=====================================================
+Armor* Armor::GetObject()
+{
+    return this;
 }
 //=====================================================
 int Armor::Armor_GetReduction(int nDamageType) const
@@ -234,16 +246,6 @@ int Armor::Armor_GetReduction(int nDamageType) const
     }
     return 0;
 }
-//=====================================================
-int Armor::Weapon_Fire(){return 0;}
-void Armor::Weapon_Reload(){return;}
-void Armor::Weapon_PlaySound(int nSoundType) const{}
-float Armor::Weapon_GetReusableDateAfterEvent(int nEvent) const{return 0.0;}
-int Armor::Weapon_GetDamageType() const{return 0;}
-int Armor::Weapon_GetDamageAmount() const{return 0;}
-int Armor::Weapon_GetCurrAmmo() const{return 0;}
-int Armor::Weapon_GetRange() const{return 0;}
-int Armor::Potion_GetHpHeal() const{return 0;}
 //============================================================================================================================================
 //============================================================================================================================================
 Potion::Potion(int nType)
@@ -257,20 +259,15 @@ Potion::Potion(int nType)
     Potion::m_nRandomHpHeal = Get2daInt("potion_rules.2da", nType, _2DA_POTION_HPHEAL_RANDOM);
 }
 //=====================================================
+Potion* Potion::GetObject()
+{
+    return this;
+}
+//=====================================================
 int Potion::Potion_GetHpHeal() const
 {
     return Potion::m_nBaseHpHeal + rand()%Potion::m_nRandomHpHeal;
 }
-//=====================================================
-int Potion::Weapon_Fire(){return 0;}
-void Potion::Weapon_Reload(){return;}
-void Potion::Weapon_PlaySound(int nSoundType) const{}
-float Potion::Weapon_GetReusableDateAfterEvent(int nEvent) const{return 0.0;}
-int Potion::Weapon_GetDamageType() const{return 0;}
-int Potion::Weapon_GetDamageAmount() const{return 0;}
-int Potion::Weapon_GetCurrAmmo() const{return 0;}
-int Potion::Weapon_GetRange() const{return 0;}
-int Potion::Armor_GetReduction(int nDamageType) const{return 0;}
 //============================================================================================================================================
 //============================================================================================================================================
 PlaceableItem::PlaceableItem()
