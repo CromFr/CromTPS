@@ -365,8 +365,10 @@ void DrawPlayerInfo(PC::PC* oPC)
     #define Y_POSITION 850
 
     float fDate = clkDateGame.GetElapsedTime();
-    Item::Item* oWeapon = oPC->m_oInventaire.GetEquipedItem(EQUIPMENT_PART_WEAPON);
-    int nCurrAmmo = oWeapon->Weapon_GetCurrAmmo();
+    Item::Item* pItem = oPC->m_oInventaire.GetEquipedItem(EQUIPMENT_PART_WEAPON);
+    Weapon* pWeapon = dynamic_cast<Weapon*>(pItem);
+
+    int nCurrAmmo = pWeapon->Weapon_GetCurrAmmo();
     float fCoolDownDateEnd = oPC->m_fFireDelayDateEnd;
     float fReloadDateEnd = oPC->m_fReloadDelayDateEnd;
 

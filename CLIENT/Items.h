@@ -28,7 +28,7 @@ struct itTemplate
 };
 bool operator==(itTemplate const& a, itTemplate const& b);
 
-struct itTemplate MakeItemTemplate(int nType, int nTypeType, int nTypeTypeType=0);
+struct itTemplate MakeItemTemplate(int nType=-1, int nTypeType=-1, int nTypeTypeType=-1);
 
 ///On ne peut pas créer un item avec cette classe, car elle est abstraite
 class Item
@@ -45,9 +45,7 @@ class Item
 
 
     protected:
-    int m_nType;
-    int m_nTypeType;
-    int m_nTypeTypeType;
+    itTemplate m_Template;
     int m_nPrice;
     std::string m_sName;
 

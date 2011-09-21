@@ -117,8 +117,7 @@ void PC::FireAtPosition(struct worldpospx pPosVisee)
     Item::Item* pItem = PC::m_oInventaire.GetEquipedItem(EQUIPMENT_PART_WEAPON);
     if(pItem == 0)return;
 
-    Weapon* pWeapon;
-    pWeapon = pItem->GetObject();
+    Weapon* pWeapon = dynamic_cast<Weapon*>(pItem);
 
     int nRange = pWeapon->Weapon_GetRange();
     int nDamageType = pWeapon->Weapon_GetDamageType();
@@ -260,7 +259,8 @@ bool PC::TakeDamages(int nAmount, int nDamageType)
     int nDmgFinal;
     float fDate = clkDateGame.GetElapsedTime();
 
-    Item::Item* pArmor = PC::m_oInventaire.GetEquipedItem(EQUIPMENT_PART_ARMOR);
+    Item::Item* pItem = PC::m_oInventaire.GetEquipedItem(EQUIPMENT_PART_ARMOR);
+    Armor::Armor* pArmor = dynamic_cast<Armor*>(pItem);
     if(pArmor == 0)return true;
 
     float fArmorReduction = 1-(pArmor->Armor_GetReduction(nDamageType))/100;
@@ -312,7 +312,8 @@ Inventory::Inventory* PC::GetInventory()
 bool PC::UsePotion(int nPotionType)
 {
     struct itTemplate Template = MakeItemTemplate(ITEM_TYPE_POTION, nPotionType);
-    Item::Item* pPotion = PC::m_oInventaire.GetFirstItem(Template);
+    Item::Item* pItem = PC::m_oInventaire.GetFirstItem(Template);
+    Potion::Potion* pPotion = dynamic_cast<Potion*>(pItem);
 
     //Si l'objet à equipper est bien dans l'inventaire
     if(PC::m_oInventaire.GetItemStack(Template)>0)

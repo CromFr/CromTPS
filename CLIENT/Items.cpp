@@ -59,11 +59,9 @@ struct itTemplate MakeItemTemplate(int nType, int nTypeType, int nTypeTypeType)
 //============================================================================================================================================
 Item::Item()
 {
-    Item::m_nType=0;
-    Item::m_nTypeType=0;
-    Item::m_nTypeTypeType=0;
-    Item::m_nPrice=0;
-    Item::m_sName="";
+    Item::m_Template=MakeItemTemplate(-1,-1,-1);
+    Item::m_nPrice=-1;
+    Item::m_sName="INVALID_ITEM";
 
 }
 //============================================================================================================================================
@@ -74,19 +72,14 @@ Item* Item::GetObject()
 //============================================================================================================================================
 bool Item::GetIsItemValid() const
 {
-    if(Item::m_nType!=0)
+    if(Item::m_Template.type!=-1)
         return true;
     return false;
 }
 //============================================================================================================================================
 struct itTemplate Item::GetTemplate() const
 {
-    struct itTemplate TemplateReturn;
-        TemplateReturn.type=Item::m_nType;
-        TemplateReturn.typetype=Item::m_nTypeType;
-        TemplateReturn.typetypetype=Item::m_nTypeTypeType;
-
-    return TemplateReturn;
+    return Item::m_Template;
 }
 //============================================================================================================================================
 std::string Item::GetName() const
@@ -98,9 +91,9 @@ void Item::Display() const
 {
     using namespace std;
 
-    cout<<"m_nType="<<Item::m_nType<<endl;
-    cout<<"m_nTypeType="<<Item::m_nTypeType<<endl;
-    cout<<"m_nTypeTypeType="<<Item::m_nTypeTypeType<<endl;
+    cout<<"m_nType="<<Item::m_Template.type<<endl;
+    cout<<"m_nTypeType="<<Item::m_Template.typetype<<endl;
+    cout<<"m_nTypeTypeType="<<Item::m_Template.typetypetype<<endl;
     cout<<"m_nPrice="<<Item::m_nPrice<<endl;
     cout<<"m_sName="<<Item::m_sName<<endl;
 }
@@ -108,8 +101,7 @@ void Item::Display() const
 //============================================================================================================================================
 Weapon::Weapon(int nType)
 {
-    Item::m_nType = ITEM_TYPE_WEAPON;
-    Item::m_nTypeType = nType;
+    Item::m_Template = MakeItemTemplate(ITEM_TYPE_WEAPON, nType);
     Item::m_nPrice = Get2daInt("weapon_rules.2da", nType, _2DA_WEAPON_PRICE);
     Item::m_sName = Get2daString("weapon_rules.2da", nType, _2DA_WEAPON_NAME);
 
@@ -218,8 +210,7 @@ int Weapon::Weapon_GetRange() const
 //============================================================================================================================================
 Armor::Armor(int nType)
 {
-    Item::m_nType = ITEM_TYPE_ARMOR;
-    Item::m_nTypeType = nType;
+    Item::m_Template = MakeItemTemplate(ITEM_TYPE_ARMOR, nType);
     Item::m_nPrice = Get2daInt("armor_rules.2da", nType, _2DA_ARMOR_PRICE);
     Item::m_sName = Get2daString("armor_rules.2da", nType, _2DA_ARMOR_NAME);
 
@@ -250,8 +241,7 @@ int Armor::Armor_GetReduction(int nDamageType) const
 //============================================================================================================================================
 Potion::Potion(int nType)
 {
-    Item::m_nType = ITEM_TYPE_POTION;
-    Item::m_nTypeType = nType;
+    Item::m_Template = MakeItemTemplate(ITEM_TYPE_POTION, nType);
     Item::m_nPrice = Get2daInt("potion_rules.2da", nType, _2DA_POTION_PRICE);
     Item::m_sName = Get2daString("potion_rules.2da", nType, _2DA_POTION_NAME);
 
@@ -278,9 +268,8 @@ PlaceableItem::PlaceableItem()
 //============================================================================================================================================
 Explosive::Explosive(int nType)
 {
-    Item::m_nType = ITEM_TYPE_PLACEABLEITEM;
-    Item::m_nTypeType = PLACEABLEITEM_EXPLOSIVE;
-    Item::m_nTypeTypeType = nType;
+    Item::m_Template = MakeItemTemplate(ITEM_TYPE_PLACEABLEITEM, PLACEABLEITEM_EXPLOSIVE, nType);
+
     Item::m_nPrice = Get2daInt("explosive_rules.2da", nType, _2DA_PLACEABLEITEM_EXPLOSIVE_PRICE);
     Item::m_sName = Get2daString("explosive_rules.2da", nType, _2DA_PLACEABLEITEM_EXPLOSIVE_NAME);
 
