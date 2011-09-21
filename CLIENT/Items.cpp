@@ -64,29 +64,38 @@ Item::Item()
     Item::m_sName="INVALID_ITEM";
 
 }
-//============================================================================================================================================
-Item* Item::GetObject()
+//=====================================================
+/*Weapon::Weapon* Item::GetWeapon()
 {
-    return this;
+    if(Item::m_Template.type==ITEM_TYPE_WEAPON)
+        return dynamic_cast<Weapon*>(this);
+    return 0;
 }
-//============================================================================================================================================
+//=====================================================
+Armor::Armor* Item::GetArmor()
+{
+    if(Item::m_Template.type==ITEM_TYPE_ARMOR)
+        return dynamic_cast<Armor*>(this);
+    return 0;
+}*/
+//=====================================================
 bool Item::GetIsItemValid() const
 {
     if(Item::m_Template.type!=-1)
         return true;
     return false;
 }
-//============================================================================================================================================
+//=====================================================
 struct itTemplate Item::GetTemplate() const
 {
     return Item::m_Template;
 }
-//============================================================================================================================================
+//=====================================================
 std::string Item::GetName() const
 {
     return Item::m_sName;
 }
-//============================================================================================================================================
+//=====================================================
 void Item::Display() const
 {
     using namespace std;
@@ -97,8 +106,11 @@ void Item::Display() const
     cout<<"m_nPrice="<<Item::m_nPrice<<endl;
     cout<<"m_sName="<<Item::m_sName<<endl;
 }
+
 //============================================================================================================================================
 //============================================================================================================================================
+//============================================================================================================================================
+
 Weapon::Weapon(int nType)
 {
     Item::m_Template = MakeItemTemplate(ITEM_TYPE_WEAPON, nType);
@@ -136,12 +148,7 @@ Weapon::Weapon(int nType)
     Weapon::m_sndReload=0;
 }
 //=====================================================
-Weapon* Weapon::GetObject()
-{
-    return this;
-}
-//=====================================================
-int Weapon::Weapon_Fire()
+int Weapon::Fire()
 {
     Weapon::m_nCurrAmmo--;
     if(m_nCurrAmmo <= 0)
@@ -149,12 +156,12 @@ int Weapon::Weapon_Fire()
     return 0;
 }
 //=====================================================
-void Weapon::Weapon_Reload()
+void Weapon::Reload()
 {
     Weapon::m_nCurrAmmo = Weapon::m_nStock;
 }
 //=====================================================
-void Weapon::Weapon_PlaySound(int nSoundType) const
+void Weapon::PlaySound(int nSoundType) const
 {
     switch(nSoundType)
     {
@@ -173,7 +180,7 @@ void Weapon::Weapon_PlaySound(int nSoundType) const
     }
 }
 //=====================================================
-float Weapon::Weapon_GetReusableDateAfterEvent(int nEvent) const
+float Weapon::GetReusableDateAfterEvent(int nEvent) const
 {
     if(nEvent == _ITEMS_WEAPON_EVENT_FIRE)
     {
@@ -186,23 +193,23 @@ float Weapon::Weapon_GetReusableDateAfterEvent(int nEvent) const
     return clkDateGame.GetElapsedTime();
 }
 //=====================================================
-int Weapon::Weapon_GetDamageType() const
+int Weapon::GetDamageType() const
 {
     return Weapon::m_nDamageType;
 }
 //=====================================================
-int Weapon::Weapon_GetDamageAmount() const
+int Weapon::GetDamageAmount() const
 {
     int nRandWidth = Weapon::m_nDamage*0.20;//20% d'aléatoire
     return Weapon::m_nDamage-nRandWidth/2+rand()%nRandWidth;
 }
 //=====================================================
-int Weapon::Weapon_GetCurrAmmo()const
+int Weapon::GetCurrAmmo()const
 {
     return Weapon::m_nCurrAmmo;
 }
 //=====================================================
-int Weapon::Weapon_GetRange() const
+int Weapon::GetRange() const
 {
     return Weapon::m_nRange;
 }
@@ -219,12 +226,15 @@ Armor::Armor(int nType)
     Armor::m_nReductionVsGauss = Get2daInt("armor_rules.2da", nType, _2DA_ARMOR_RD_VS_GAUSS);
 }
 //=====================================================
-Armor* Armor::GetObject()
+int Armor::ReduceDamages(int nDamageType, int nAmount)const
 {
-    return this;
+    //Pourcentage de réduction
+    float fArmorReduction = 1-(GetReduction(nDamageType))/100;
+
+    return nAmount*fArmorReduction;
 }
 //=====================================================
-int Armor::Armor_GetReduction(int nDamageType) const
+int Armor::GetReduction(int nDamageType) const
 {
     switch(nDamageType)
     {
@@ -236,27 +246,6 @@ int Armor::Armor_GetReduction(int nDamageType) const
             return Armor::m_nReductionVsGauss;
     }
     return 0;
-}
-//============================================================================================================================================
-//============================================================================================================================================
-Potion::Potion(int nType)
-{
-    Item::m_Template = MakeItemTemplate(ITEM_TYPE_POTION, nType);
-    Item::m_nPrice = Get2daInt("potion_rules.2da", nType, _2DA_POTION_PRICE);
-    Item::m_sName = Get2daString("potion_rules.2da", nType, _2DA_POTION_NAME);
-
-    Potion::m_nBaseHpHeal = Get2daInt("potion_rules.2da", nType, _2DA_POTION_HPHEAL_BASE);
-    Potion::m_nRandomHpHeal = Get2daInt("potion_rules.2da", nType, _2DA_POTION_HPHEAL_RANDOM);
-}
-//=====================================================
-Potion* Potion::GetObject()
-{
-    return this;
-}
-//=====================================================
-int Potion::Potion_GetHpHeal() const
-{
-    return Potion::m_nBaseHpHeal + rand()%Potion::m_nRandomHpHeal;
 }
 //============================================================================================================================================
 //============================================================================================================================================

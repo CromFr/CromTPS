@@ -119,8 +119,8 @@ void PC::FireAtPosition(struct worldpospx pPosVisee)
 
     Weapon* pWeapon = dynamic_cast<Weapon*>(pItem);
 
-    int nRange = pWeapon->Weapon_GetRange();
-    int nDamageType = pWeapon->Weapon_GetDamageType();
+    int nRange = pWeapon->GetRange();
+    int nDamageType = pWeapon->GetDamageType();
 
     //Determination du coeff de la droite
     float fDeltaVer = (pPosVisee.ver - PC::m_pPosition.ver),
@@ -233,17 +233,17 @@ void PC::FireAtPosition(struct worldpospx pPosVisee)
     }
 
     //Repercussions sur l'arme
-    if(pWeapon->Weapon_Fire())//Si il faut recharger
+    if(pWeapon->Fire())//Si il faut recharger
     {
-        PC::m_fReloadDelayDateEnd = pWeapon->Weapon_GetReusableDateAfterEvent(1);
-        pWeapon->Weapon_Reload();
+        PC::m_fReloadDelayDateEnd = pWeapon->GetReusableDateAfterEvent(1);
+        pWeapon->Reload();
     }
     else//Cooldown du tir
     {
-        PC::m_fFireDelayDateEnd = pWeapon->Weapon_GetReusableDateAfterEvent(0);
+        PC::m_fFireDelayDateEnd = pWeapon->GetReusableDateAfterEvent(0);
     }
     //On joue le son
-    pWeapon->Weapon_PlaySound(0);
+    pWeapon->PlaySound(0);
     //On ajoute le ray
     if(!bDepRayIsSet)
     {
@@ -256,18 +256,14 @@ void PC::FireAtPosition(struct worldpospx pPosVisee)
 //====================================================================================================================================================
 bool PC::TakeDamages(int nAmount, int nDamageType)
 {
-    int nDmgFinal;
     float fDate = clkDateGame.GetElapsedTime();
 
     Item::Item* pItem = PC::m_oInventaire.GetEquipedItem(EQUIPMENT_PART_ARMOR);
     Armor::Armor* pArmor = dynamic_cast<Armor*>(pItem);
-    if(pArmor == 0)return true;
+    if(pArmor != 0)
+        nAmount = pArmor->ReduceDamages(nDamageType, nAmount);
 
-    float fArmorReduction = 1-(pArmor->Armor_GetReduction(nDamageType))/100;
-
-    nDmgFinal = nAmount*fArmorReduction;
-
-    if(PC::m_nHP-nDmgFinal <= 0)
+    if(PC::m_nHP-nAmount <= 0)
     {
         PC::m_nHP = 0;
         PC::m_fRespawnDelayDateEnd = fDate+RESPAWN_DELAY;
@@ -275,7 +271,7 @@ bool PC::TakeDamages(int nAmount, int nDamageType)
     }
     else
     {
-        PC::m_nHP -= nDmgFinal;
+        PC::m_nHP -= nAmount;
         return false;
     }
 }
@@ -309,30 +305,6 @@ Inventory::Inventory* PC::GetInventory()
     return &(PC::m_oInventaire);
 }
 //====================================================================================================================================================
-bool PC::UsePotion(int nPotionType)
-{
-    struct itTemplate Template = MakeItemTemplate(ITEM_TYPE_POTION, nPotionType);
-    Item::Item* pItem = PC::m_oInventaire.GetFirstItem(Template);
-    Potion::Potion* pPotion = dynamic_cast<Potion*>(pItem);
-
-    //Si l'objet à equipper est bien dans l'inventaire
-    if(PC::m_oInventaire.GetItemStack(Template)>0)
-    {
-        int nAmount = pPotion->Potion_GetHpHeal();
-
-        PC::Heal(nAmount);
-        PC::m_oInventaire.DelItem(pPotion);
-        return true;
-    }
-    else
-    {
-        std::cout << "L'item n'est pas dans l'inventaire !"<<std::endl;
-        return false;
-    }
-
-
-}
-//====================================================================================================================================================
 bool PC::BuyItem(struct itTemplate Template)
 {
 
@@ -344,9 +316,6 @@ bool PC::BuyItem(struct itTemplate Template)
             break;
         case ITEM_TYPE_ARMOR:
             nPrice = Get2daInt("armor_rules.2da", Template.typetype, _2DA_ARMOR_PRICE);
-            break;
-        case ITEM_TYPE_POTION:
-            nPrice = Get2daInt("potion_rules.2da", Template.typetype, _2DA_POTION_PRICE);
             break;
         case ITEM_TYPE_PLACEABLEITEM:
             switch(Template.typetype)

@@ -368,7 +368,7 @@ void DrawPlayerInfo(PC::PC* oPC)
     Item::Item* pItem = oPC->m_oInventaire.GetEquipedItem(EQUIPMENT_PART_WEAPON);
     Weapon* pWeapon = dynamic_cast<Weapon*>(pItem);
 
-    int nCurrAmmo = pWeapon->Weapon_GetCurrAmmo();
+    int nCurrAmmo = pWeapon->GetCurrAmmo();
     float fCoolDownDateEnd = oPC->m_fFireDelayDateEnd;
     float fReloadDateEnd = oPC->m_fReloadDelayDateEnd;
 

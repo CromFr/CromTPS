@@ -281,9 +281,6 @@ Item::Item* Inventory::CreateItem(struct itTemplate Template) const
         case ITEM_TYPE_ARMOR:
             pItem = new Armor::Armor(Template.typetype);
             break;
-        case ITEM_TYPE_POTION:
-            pItem = new Potion::Potion(Template.typetype);
-            break;
         case ITEM_TYPE_PLACEABLEITEM:
             switch(Template.typetype)
             {

@@ -13,23 +13,23 @@
 	<File name="Gif.h" open="0" top="0" tabpos="10">
 		<Cursor position="2996" topLine="85" />
 	</File>
-	<File name="Inventory.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="9601" topLine="263" />
+	<File name="Inventory.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="9601" topLine="73" />
 	</File>
 	<File name="Inventory.h" open="1" top="0" tabpos="5">
 		<Cursor position="1588" topLine="36" />
 	</File>
-	<File name="Items.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="9811" topLine="248" />
+	<File name="Items.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="8044" topLine="163" />
 	</File>
 	<File name="Items.h" open="1" top="0" tabpos="9">
-		<Cursor position="2305" topLine="115" />
+		<Cursor position="675" topLine="15" />
 	</File>
 	<File name="Notes.txt" open="0" top="0" tabpos="8">
 		<Cursor position="63" topLine="0" />
 	</File>
-	<File name="Player.cpp" open="1" top="1" tabpos="8">
-		<Cursor position="3162" topLine="105" />
+	<File name="Player.cpp" open="1" top="1" tabpos="7">
+		<Cursor position="3111" topLine="101" />
 	</File>
 	<File name="Player.h" open="0" top="0" tabpos="1">
 		<Cursor position="3171" topLine="106" />
@@ -46,20 +46,20 @@
 	<File name="convert.h" open="0" top="0" tabpos="12">
 		<Cursor position="673" topLine="0" />
 	</File>
-	<File name="guifunc.cpp" open="0" top="0" tabpos="13">
-		<Cursor position="8331" topLine="394" />
+	<File name="guifunc.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="14514" topLine="373" />
 	</File>
 	<File name="guifunc.h" open="1" top="0" tabpos="1">
 		<Cursor position="372" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="6509" topLine="219" />
+		<Cursor position="6713" topLine="221" />
 	</File>
 	<File name="main.h" open="1" top="0" tabpos="2">
 		<Cursor position="4371" topLine="137" />
 	</File>
-	<File name="serverlist.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="347" topLine="0" />
+	<File name="serverlist.cpp" open="1" top="0" tabpos="11">
+		<Cursor position="3031" topLine="87" />
 	</File>
 	<File name="sound.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="2306" topLine="18" />

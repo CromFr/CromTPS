@@ -36,11 +36,22 @@ class Item
     public:
     Item();
 
-    virtual Item* GetObject();
+    ///Renvoie un pointeur sur le weapon associé via un cast. Renvoie 0 si ce n'est pas un weapon
+    //Weapon::Weapon* GetWeapon();
+    ///idem pour armor
+    //Armor::Armor* GetArmor();
 
-    bool GetIsItemValid() const;
+    ///True si l'item a été configuré normalement
+    ///False si l'item est inexistant ou mal configuré
+    virtual bool GetIsItemValid() const;
+
+    ///Retourne le template associé à l'item
     struct itTemplate GetTemplate() const;
+
+    ///Retourne le nom de l'item
     std::string GetName() const;
+
+    /// (DEBUG) Affiche les infos sur l'item dans la console
     void Display() const;
 
 
@@ -49,8 +60,6 @@ class Item
     int m_nPrice;
     std::string m_sName;
 
-    private:
-
 };
 
 class Weapon : public Item
@@ -58,16 +67,24 @@ class Weapon : public Item
     public:
     Weapon(int nType);//A la création, préciser le typetype
 
-    virtual Weapon* GetObject();
+    ///Applique les repercussions d'un tir sur l'arme (diminution des munitions). Retourne 1 si il faut recharger
+    int Fire();
 
-    int Weapon_Fire();//retourne 1 si il faut recharger
-    void Weapon_Reload();//retourne 1 si il faut recharger
-    void Weapon_PlaySound(int nSoundType) const;//0:tir, 1:Impact
-    float Weapon_GetReusableDateAfterEvent(int nEvent) const;//0:Event de tir, 1 de reload
-    int Weapon_GetDamageType() const;
-    int Weapon_GetDamageAmount() const;//Calcul aléatoire
-    int Weapon_GetCurrAmmo() const;
-    int Weapon_GetRange() const;
+    ///Recharge l'arme
+    void Reload();
+    ///Joue le son de tir=0/impact=1/rechargement=2 de l'arme.
+    void PlaySound(int nSoundType) const;
+    // TODO (crom#1#): Son impact & rechargement a faire
+
+    ///Renvoie la date a laquelle l'arme sera de nouveau utilisable après un event de tir=0/rechargement=1
+    float GetReusableDateAfterEvent(int nEvent) const;
+
+    //Accesseurs
+    int GetDamageType() const;
+    int GetDamageAmount() const;//Calcul aléatoire
+    int GetCurrAmmo() const;
+    int GetRange() const;
+    //
 
     private:
     int m_nDamageType;//Types de dg infligés
@@ -87,29 +104,18 @@ class Armor : public Item
     public:
     Armor(int nType);//A la création, préciser le typetype
 
-    virtual Armor* GetObject();
-
-    int Armor_GetReduction(int nDamageType) const;
+    ///Renvoie les dégâts restant après appliquation de la reduction de l'armure
+    /// nDamageType : type des dégâts (DAMAGE_TYPE_*)
+    /// nAmount : Quantité de dégâts reçus
+    int ReduceDamages(int nDamageType, int nAmount)const;
 
     private:
     int m_nReductionVsBullet;
     int m_nReductionVsLaser;
     int m_nReductionVsGauss;
-};
 
-
-class Potion : public Item
-{
-    public:
-    Potion(int nType);//A la création, préciser le typetype
-
-    virtual Potion* GetObject();
-
-    int Potion_GetHpHeal() const;//Calcul aléatoire
-
-    private:
-    int m_nBaseHpHeal;
-    int m_nRandomHpHeal;
+    //Renvoie un pourcentage (0-100) à /100 et multiplier par dg
+    int GetReduction(int nDamageType) const;
 };
 
 
@@ -120,8 +126,9 @@ class PlaceableItem : public Item
     PlaceableItem();
 
 
-    private:
+    protected:
     int m_nPlaceableType;
+    int m_nSkin;
 
 };
 
