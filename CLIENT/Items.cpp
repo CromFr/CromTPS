@@ -65,20 +65,6 @@ Item::Item()
 
 }
 //=====================================================
-/*Weapon::Weapon* Item::GetWeapon()
-{
-    if(Item::m_Template.type==ITEM_TYPE_WEAPON)
-        return dynamic_cast<Weapon*>(this);
-    return 0;
-}
-//=====================================================
-Armor::Armor* Item::GetArmor()
-{
-    if(Item::m_Template.type==ITEM_TYPE_ARMOR)
-        return dynamic_cast<Armor*>(this);
-    return 0;
-}*/
-//=====================================================
 bool Item::GetIsItemValid() const
 {
     if(Item::m_Template.type!=-1)
@@ -269,6 +255,41 @@ Explosive::Explosive(int nType)
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//=====================================================
+Weapon::Weapon* GetWeapon(Item::Item* pItem)
+{
+    if(pItem->GetTemplate().type==ITEM_TYPE_WEAPON)
+        return dynamic_cast<Weapon*>(pItem);
+    return 0;
+}
+//=====================================================
+Armor::Armor* GetArmor(Item::Item* pItem)
+{
+    if(pItem->GetTemplate().type==ITEM_TYPE_ARMOR)
+        return dynamic_cast<Armor*>(pItem);
+    return 0;
+}
 
 
 

@@ -86,7 +86,7 @@ int PC::GetSkin() const
 PC::PC(int nTeam):m_oInventaire()
 {
     PC::m_nTeam=nTeam;
-    PC::m_nHP=0;
+    PC::m_nHP=100;
     PC::m_nMoney=0;
     PC::m_vSpeed=sf::Vector2f(0, 0);// pixel/sec
     PC::m_fFacing=0;
@@ -96,7 +96,7 @@ PC::PC(int nTeam):m_oInventaire()
     PC::m_fFireDelayDateEnd=0.0;
     PC::m_fReloadDelayDateEnd=0.0;
 
-    PC::m_oInventaire.Display();
+    //PC::m_oInventaire.Display();
 }
 //====================================================================================================================================================
 PC::~PC()
@@ -114,10 +114,8 @@ void PC::FireAtPosition(struct worldpospx pPosVisee)
     if(PC::m_fReloadDelayDateEnd>fDate)//si le joueur doit recharger
         return;
 
-    Item::Item* pItem = PC::m_oInventaire.GetEquipedItem(EQUIPMENT_PART_WEAPON);
-    if(pItem == 0)return;
-
-    Weapon* pWeapon = dynamic_cast<Weapon*>(pItem);
+    Weapon* pWeapon = GetWeapon(PC::m_oInventaire.GetEquipedItem(EQUIPMENT_PART_WEAPON));
+    if(pWeapon == 0)return;
 
     int nRange = pWeapon->GetRange();
     int nDamageType = pWeapon->GetDamageType();
@@ -258,8 +256,7 @@ bool PC::TakeDamages(int nAmount, int nDamageType)
 {
     float fDate = clkDateGame.GetElapsedTime();
 
-    Item::Item* pItem = PC::m_oInventaire.GetEquipedItem(EQUIPMENT_PART_ARMOR);
-    Armor::Armor* pArmor = dynamic_cast<Armor*>(pItem);
+    Armor::Armor* pArmor = GetArmor(PC::m_oInventaire.GetEquipedItem(EQUIPMENT_PART_ARMOR));
     if(pArmor != 0)
         nAmount = pArmor->ReduceDamages(nDamageType, nAmount);
 

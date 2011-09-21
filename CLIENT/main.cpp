@@ -369,8 +369,8 @@ void Game()
     PC::PC oPC(1);
 
     Inventory::Inventory* pInventaire = oPC.GetInventory();
-    Item::Item* pItem = pInventaire->AddItem(MakeItemTemplate(ITEM_TYPE_WEAPON, WEAPON_TYPE_LASER_RIFLE));
-    pInventaire->EquipItem(pItem);
+    //Item::Item* pItem = pInventaire->AddItem(MakeItemTemplate(ITEM_TYPE_WEAPON, WEAPON_TYPE_LASER_RIFLE));
+    //pInventaire->EquipItem(pItem);
 
     pInventaire->AddItem(MakeItemTemplate(ITEM_TYPE_WEAPON, WEAPON_TYPE_GAUSS_DESTRUCTEUR));
     pInventaire->AddItem(MakeItemTemplate(ITEM_TYPE_ARMOR, ARMOR_TYPE_BULLETS));
@@ -380,7 +380,10 @@ void Game()
     pInventaire->AddItem(MakeItemTemplate(ITEM_TYPE_POTION, POTION_TYPE_MED));
     pInventaire->AddItem(MakeItemTemplate(ITEM_TYPE_POTION, POTION_TYPE_MED));
     pInventaire->AddItem(MakeItemTemplate(ITEM_TYPE_POTION, POTION_TYPE_MED));
-    pInventaire->AddItem(MakeItemTemplate(ITEM_TYPE_POTION, POTION_TYPE_MED));
+
+    //pInventaire->EquipItem(pInventaire->AddItem(MakeItemTemplate(ITEM_TYPE_POTION, POTION_TYPE_MED)));
+
+    //pInventaire->Display();
 
 
 

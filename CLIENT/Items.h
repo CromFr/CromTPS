@@ -36,11 +36,6 @@ class Item
     public:
     Item();
 
-    ///Renvoie un pointeur sur le weapon associé via un cast. Renvoie 0 si ce n'est pas un weapon
-    //Weapon::Weapon* GetWeapon();
-    ///idem pour armor
-    //Armor::Armor* GetArmor();
-
     ///True si l'item a été configuré normalement
     ///False si l'item est inexistant ou mal configuré
     virtual bool GetIsItemValid() const;
@@ -144,6 +139,13 @@ class Explosive : public PlaceableItem
     float m_fTimeOut;
 
 };
+
+
+
+///Renvoie un pointeur sur le weapon associé via un cast. Renvoie 0 si ce n'est pas un weapon
+Weapon::Weapon* GetWeapon(Item::Item* pItem);
+///idem pour armor
+Armor::Armor* GetArmor(Item::Item* pItem);
 
 
 
