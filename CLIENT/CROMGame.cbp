@@ -40,6 +40,8 @@
 		</Linker>
 		<Unit filename="Buttons.cpp" />
 		<Unit filename="Buttons.h" />
+		<Unit filename="DelayedCommands.cpp" />
+		<Unit filename="DelayedCommands.hpp" />
 		<Unit filename="Gif.cpp" />
 		<Unit filename="Gif.h" />
 		<Unit filename="Inventory.cpp" />

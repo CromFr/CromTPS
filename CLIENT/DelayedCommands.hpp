@@ -9,10 +9,12 @@
 
 #include <SFML/Graphics.hpp>
 
+typedef void (*Command)();
+
 class DelayedCommands
 {
     public:
-    DelayedCommands();
+    DelayedCommands(bool bExecute=true);
     ~DelayedCommands();
 
 
@@ -20,8 +22,7 @@ class DelayedCommands
     void ExecuteCommands();
 
     ///Vide la liste des commandes
-    /// bExecute : true=>les commandes sont executees immédiatement puis sont supprimees, false=>Rien n'est éxécuté et tout est supprimé
-    void StopCommands(bool bExecute=false);
+    void StopCommands();
 
     ///Met en pause/redémarre les commandes
     /// bRestart : false=>met en pause, true=>Redémarre après une pause
@@ -29,14 +30,14 @@ class DelayedCommands
     void PauseCommands(bool bRestart=false);
 
     ///Ajoute une commande à retarder
-    void AddCommand(float fDelay, void* Function);
+    void AddCommand(float fDelay, void *Function);
 
     private:
     bool m_bExecute;
-    std::vector<float> m_pDatesList;
-    //std::vector<void> *m_pCommandsList();
+    std::vector<float> m_fDatesList;
+    std::vector<Command> m_pCommandsList;
 
-    void* m_pCommandsList[100];
+    //void* m_pCommandsList[100];
 };
 
 DelayedCommands::DelayedCommands CommandsDelayer;
